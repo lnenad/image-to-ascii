@@ -1,0 +1,8 @@
+[package]
+name = "image-to-ascii"
+version = "0.1.0"
+authors = ["Nenad Lukic <nenadspp@gmail.com>"]
+
+[dependencies]
+image = "*"
+time = "0.1"
