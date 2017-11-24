@@ -1,5 +1,5 @@
 [package]
-name = "image-to-ascii"
+name = "imagetoascii"
 version = "0.1.0"
 authors = ["Nenad Lukic <nenadspp@gmail.com>"]
 
