@@ -2,7 +2,7 @@ extern crate imagetoascii;
 extern crate time;
 extern crate image;
 
-use imagetoascii::cmd::parser::parse_arguments;
+use imagetoascii::cmd::Parser;
 use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
@@ -12,14 +12,16 @@ use image::GenericImage;
 use image::imageops::FilterType;
 
 fn main() {
-    let (arguments, flags) = parse_arguments();
+    let (arguments, flags) = Parser::new().parse();
     let image_path = arguments.get("image").or(arguments.get("i")).expect("No image argument provided");
+
+    println!("{:?}{:?}", arguments, flags);
 
     let output = arguments.get("output").or(arguments.get("o")).expect("No output argument provided");
 
     let resolution = match arguments.get("resolution").or(arguments.get("r")) {
         Some(val) => val.parse::<u32>().unwrap(),
-        None => 3
+        None => 5
     };
 
     let start = time::precise_time_ns();
