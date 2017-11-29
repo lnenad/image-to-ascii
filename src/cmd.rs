@@ -6,22 +6,21 @@ type ArgumentList = HashMap<String, String>;
 type Flags = Vec<String>;
 
 /**
-*
-*
+* Parser structure
 */
 pub struct Parser{
     prefixes: Option<Vec<String>>
 }
 
 /**
-*
-*
+* Parser implementation
 */
 impl Parser {
 
     /**
+    * Constructor
     *
-    *
+    * @return Parser
     */
     pub fn new() -> Parser {
         Parser {
@@ -30,8 +29,10 @@ impl Parser {
     }
 
     /**
+    * Sets the prefix for the arguments
     *
-    *
+    * @param prefixes Vec<String>
+    * @return Parser
     */
     pub fn strict_prefix(&mut self, prefixes: Vec<String>) -> &Self {
         self.prefixes = Some(prefixes);
@@ -39,8 +40,9 @@ impl Parser {
     }
 
     /**
+    * Parses the given cmd arguments
     *
-    *
+    * @return Touple(ArgumentList, Flags)
     */
     pub fn parse(&self) -> (ArgumentList, Flags) {
         let mut named_arguments: ArgumentList = ArgumentList::new();
