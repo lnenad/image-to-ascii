@@ -6,3 +6,4 @@ authors = ["Nenad Lukic <nenadspp@gmail.com>"]
 [dependencies]
 image = "*"
 time = "0.1"
+open = "3"
